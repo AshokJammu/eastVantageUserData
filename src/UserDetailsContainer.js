@@ -29,12 +29,14 @@ const UserDetailsContainer = () => {
     }
   };
   useEffect(() => {
-    return () => fetchData();
+    // return () => fetchData();
+    fetchData();
   }, []);
 
   const handleRefresh = () => {
     // Refresh the page
-    window.location.reload();
+    // window.location.reload();
+    fetchData();
   };
   console.log(data, "data");
   return (
@@ -52,7 +54,7 @@ const UserDetailsContainer = () => {
             <div className="col-12 col-md-6 col-lg-4 my-2">
               <div
                 class={`card container border-success rounded ${
-                  ind == 0 && "border-info"
+                  ind === 0 && "border-info"
                 }`}
               >
                 <div
@@ -62,7 +64,7 @@ const UserDetailsContainer = () => {
                   <div>
                     <p className="mb-0 text-secondary">User details</p>
                   </div>
-                  {ind == 0 && (
+                  {ind === 0 && (
                     <div>
                       <p className="mb-0 text-danger">New</p>
                     </div>
